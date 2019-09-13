@@ -1,0 +1,4 @@
+#!/bin/sh
+
+black {{ cookiecutter.package_name }} 
+pyflakes {{ cookiecutter.package_name }} || { echo '! Commit failed: fix the above syntax errors and commit again' ; exit 1; }
