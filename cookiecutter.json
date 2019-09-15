@@ -7,7 +7,5 @@
     "package_description": "Minimal cookiecutter template for Python packages",
     "package_url": "https://github.com/joamatab/cookiecutter-pypackage-minimal",
     
-    "readme_pypi_badge": true,
-    "readme_travis_badge": true,
     "readme_travis_url": "https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal"
 }
