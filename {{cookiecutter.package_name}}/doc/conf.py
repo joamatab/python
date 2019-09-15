@@ -44,4 +44,4 @@ def linkcode_resolve(domain, info):
     if not info["module"]:
         return None
     filename = info["module"].replace(".", "/")
-    return "{{ cookiecutter.url }}/blob/master/{}.py".format(filename)
+    return "{{ cookiecutter.package_url }}/blob/master/{}.py".format(filename)
