@@ -3,8 +3,7 @@ cookiecutter-pypackage-minimal
 
 An opinionated, minimal [cookiecutter](https://github.com/audreyr/cookiecutter) template for Python packages, and some guidelines for Python packaging.
 
-Usage
------
+# Usage
 
     pip install cookiecutter
     git clone https://github.com/kragniz/cookiecutter-pypackage-minimal.git
@@ -14,8 +13,7 @@ You should then change the classifiers in `{{ package_name }}/setup.py` - it is 
 
 Fill out the README, and - if necessary - [choose a license](https://choosealicense.com/) for the project.
 
-Explanation
------------
+# Explanation
 
 The decisions `cookiecutter-pypackage-minimal` makes should all be explained here.
 

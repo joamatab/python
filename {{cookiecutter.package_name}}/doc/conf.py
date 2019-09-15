@@ -3,8 +3,8 @@ from recommonmark.transform import AutoStructify
 
 project = "{{ cookiecutter.package_name }}"
 version = "{{ cookiecutter.package_version }}"
-copyright = "2019, {{ cookiecutter.author }}"
-author = "{{ cookiecutter.author }}"
+copyright = "2019, {{ cookiecutter.author_name }}"
+author = "{{ cookiecutter.author_name }}"
 
 master_doc = "index"
 html_theme = "sphinx_rtd_theme"
