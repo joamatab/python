@@ -1,5 +1,8 @@
-Building the docs
------------------
+# Writing the dos
+
+you can mix and match markdown and RST syntax in the index. I prefer markdown.
+
+# Building the docs
 
 To build the docs you need to have the package itself installed, you can do this by:
 ```bash
