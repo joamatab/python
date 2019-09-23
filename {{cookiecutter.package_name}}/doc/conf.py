@@ -24,6 +24,7 @@ extensions = [
     "sphinx.ext.linkcode",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_markdown_tables",
+    "sphinx_execute_code"
 ]
 
 # Order members by source
