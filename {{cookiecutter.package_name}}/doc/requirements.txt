@@ -3,5 +3,4 @@ sphinx-rtd-theme
 recommonmark
 sphinx-markdown-tables
 matplotlib
-sphinx-execute-code
 
