@@ -13,5 +13,5 @@ unhook:
 	rm .git/hooks/*
 
 lint:
-	flake8 {{ cookiecutter.package_name }} 
+	pyflakes {{ cookiecutter.package_name }} 
 
