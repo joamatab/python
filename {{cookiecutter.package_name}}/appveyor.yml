@@ -42,7 +42,7 @@ deploy:
   tag: $(appveyor_repo_tag_name)
   description: Release $(appveyor_repo_tag_name)
   auth_token:
-    secure: {{ cookiecutter.appveyor_token }}
+    secure: appveyor_token
   artifact: /{{ cookiecutter.package_name }}.*\.whl/
   prerelease: false
   draft: true
