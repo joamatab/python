@@ -9,7 +9,7 @@ loads a configuration from 3 files, high priority overwrites low priority:
 
 __all__ = ["CONFIG"]
 
-import os
+import pathlib
 import logging
 import hiyapyco
 
@@ -18,23 +18,20 @@ default_config = """
 keySample: valueSample
 """
 
-
-home = os.path.expanduser("~")
-cwd_config = os.path.join(os.getcwd(), "config.yml")
-home_config = os.path.join(home, ".{{ cookiecutter.package_name }}.yml")
+home = pathlib.Path.home()
+cwd = pathlib.Path.cwd()
+cwd_config = cwd / "config.yml"
+home_config = home / ".{{ cookiecutter.package_name }}.yml"
 
 CONFIG = hiyapyco.load(
-    default_config,
-    cwd_config,
-    home_config,
+    str(default_config),
+    str(cwd_config),
+    str(home_config),
     failonmissingfiles=False,
     loglevelmissingfiles=logging.DEBUG,
 )
-
-root = os.path.dirname(os.path.abspath(__file__))
-repo = os.path.split(root)[0]
-CONFIG["root"] = root
-CONFIG["repo"] = repo
+CONFIG["root"] = cwd
+CONFIG["repo"] = cwd.parent
 
 
 if __name__ == "__main__":
