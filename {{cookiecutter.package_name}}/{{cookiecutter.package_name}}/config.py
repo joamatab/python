@@ -22,6 +22,8 @@ home = pathlib.Path.home()
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
 home_config = home / ".{{ cookiecutter.package_name }}.yml"
+module_path = pathlib.Path(__file__).parent.absolute()
+repo_path = module_path.parent
 
 CONFIG = hiyapyco.load(
     str(default_config),
