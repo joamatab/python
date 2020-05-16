@@ -6,12 +6,8 @@
 ```
 pip install cookiecutter
 cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
-
 ```
 
-You should then change the classifiers in `{{ package_name }}/setup.py` - it assumes that the project will run on Python 3, so you should remove any classifiers that do not apply. The full list of PyPI classifiers can be found [here](https://pypi.org/classifiers/).
-
-Fill out the README, and - if necessary - [choose a license](https://choosealicense.com/) for the project. defaults to MIT license 
 
 # Explanation
 
@@ -33,9 +29,20 @@ You can comment them in `.pre-commit-config.yaml`
     - end-of-file-fixer
     - trailing-whitespace
 - Black: format your code
-- flake8: syntax checking
-- nbstripout: strips jupyter notebooks output
+- flake8: check syntax
+- nbstripout: strips jupyter notebooks output, so they can be version controlled
 - reorder-python-imports: sorts imports
+
+
+### CI/CD
+
+See `.github/workflows`
+
+- pythonapp.yml
+    - checks linter
+    - runs test with pytest
+- pythonpublish.yml
+    - publishes to PyPI any new releases, need to add Pypi token
 
 ### README
 
@@ -56,6 +63,9 @@ You can comment them in `.pre-commit-config.yaml`
   When installing from source, the user may not have the packages dependencies installed, and importing the package is likely to raise an `ImportError`.
 - **setup.py should be the canonical source of package dependencies**
   There is no reason to duplicate dependency specifiers (i.e. also using a `requirements.txt` file). See the testing section below for testing dependencies.
+
+You should then change the classifiers in `{{ package_name }}/setup.py` - it assumes that the project will run on Python 3, so you should remove any classifiers that do not apply. The full list of PyPI classifiers can be found [here](https://pypi.org/classifiers/).
+
 
 ### Testing
 
