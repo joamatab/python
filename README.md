@@ -1,26 +1,45 @@
 # cookiecutter-pypackage-minimal
 
-An opinionated, minimal [cookiecutter](https://github.com/audreyr/cookiecutter) template for Python packages, and some guidelines for Python packaging.
 
 # Usage
 
-    pip install cookiecutter
-    cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
+```
+pip install cookiecutter
+cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
 
-You should then change the classifiers in `{{ package_name }}/setup.py` - it is assumed that the project will run on the latest versions of Python 2 and 3, so you should remove any classifiers that do not apply. The full list of PyPI classifiers can be found [here](https://pypi.org/classifiers/).
+```
 
-Fill out the README, and - if necessary - [choose a license](https://choosealicense.com/) for the project.
+You should then change the classifiers in `{{ package_name }}/setup.py` - it assumes that the project will run on Python 3, so you should remove any classifiers that do not apply. The full list of PyPI classifiers can be found [here](https://pypi.org/classifiers/).
+
+Fill out the README, and - if necessary - [choose a license](https://choosealicense.com/) for the project. defaults to MIT license 
 
 # Explanation
 
 The decisions `cookiecutter-pypackage-minimal` makes should all be explained here.
 
+
+### Makefile
+
+The Makefile provides you with
+
+### Precommit hooks
+
+Ensures that the code that you commit follows some standards:
+
+You can comment them in `.pre-commit-config.yaml`
+
+- Standard
+    - check-yaml
+    - end-of-file-fixer
+    - trailing-whitespace
+- Black: format your code
+- flake8: syntax checking
+- nbstripout: strips jupyter notebooks output
+- reorder-python-imports: sorts imports
+
 ### README
 
-- **README should use reStructuredText format**
-  This is the format used by most Python tools, is expected by [setuptools](https://setuptools.readthedocs.io), and can be used by [Sphinx](http://sphinx-doc.org/).
-- **As few README files as possible**
-  Additional README files (AUTHORS, CHANGELOG, etc) should be left to the user to create when necessary.
+- **README should use markdown format**
 
 ### LICENSE
 
@@ -28,9 +47,6 @@ The decisions `cookiecutter-pypackage-minimal` makes should all be explained her
   This template provides you the classic [MIT](https://choosealicense.com/licenses/mit/) licence: it lets people do almost anything they want with your project, including to make and distribute closed source versions.
   If you [choose another license](https://choosealicense.com/), you also need to update the `{{ package_name }}/setup.py` file:
   adjust the `classifiers` and `license` fields accordingly.
-- **A license is a requirement**
-  Nowadays, people who want to use your library/application want to make sure they can do it legally.
-  If your library is a private library, you can use a private license. In the `{{ package_name }}/setup.py` file, set `license="Proprietary"`, and choose `'License :: Other/Proprietary License'` in the trove classifiers.
 
 ### `setup.py`
 
@@ -53,3 +69,8 @@ The decisions `cookiecutter-pypackage-minimal` makes should all be explained her
   The `tests` directory should not be a Python package unless you want to define some fixtures.
   But the best practices are to use [PyTest fixtures](https://docs.pytest.org/en/latest/fixture.html) which provides a better solution.
   Therefore, the `tests` directory has no `__init__.py` file.
+
+
+# References
+
+- [cookiecutter](https://github.com/audreyr/cookiecutter) 
