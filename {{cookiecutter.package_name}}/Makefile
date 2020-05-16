@@ -6,5 +6,7 @@ install:
 	pre-commit install
 
 lint:
-	pyflakes {{ cookiecutter.package_name }} 
+	flake8
 
+test:
+	pytest
