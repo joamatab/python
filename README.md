@@ -1,12 +1,15 @@
-# cookiecutter-pypackage-minimal
-
+# Python package template
 
 # Usage
+
+Start a new python project running
 
 ```
 pip install cookiecutter
 cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
 ```
+
+It will ask you some questions to fill the template
 
 
 # Explanation
