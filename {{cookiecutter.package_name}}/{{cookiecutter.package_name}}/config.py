@@ -2,7 +2,7 @@
 loads a configuration from 3 files, high priority overwrites low priority:
 
 1. A config.yml found in the current working directory (high priority)
-2. ~/.{{ cookiecutter.package_name }}.yml specific for the machine
+2. ~/.config/{{ cookiecutter.package_name }}.yml specific for the machine
 3. the default config is in this file
 
 """
@@ -22,7 +22,9 @@ home = pathlib.Path.home()
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
 
-home_config = home / ".{{ cookiecutter.package_name }}.yml"
+home_config = home / ".config" / "{{ cookiecutter.package_name }}.yml"
+config_dir = home / ".config"
+config.mkdir(exist_ok=True)
 module_path = pathlib.Path(__file__).parent.absolute()
 repo_path = module_path.parent
 
