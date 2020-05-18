@@ -4,5 +4,8 @@
     "package_name": "cookiecutter_pypackage_minimal",
     "package_version": "0.0.1",
     "package_description": "Minimal cookiecutter template for Python packages",
-    "package_url": "https://github.com/joamatab/cookiecutter-pypackage-minimal"
+    "package_url": "https://github.com/joamatab/cookiecutter-pypackage-minimal",
+    "_copy_without_render": [
+        ".github/workflows"
+    ]
 }
