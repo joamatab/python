@@ -22,9 +22,9 @@ home = pathlib.Path.home()
 cwd = pathlib.Path.cwd()
 cwd_config = cwd / "config.yml"
 
-home_config = home / ".config" / "{{ cookiecutter.package_name }}.yml"
+home_confi.g = home / ".config" / "{{ cookiecutter.package_name }}.yml"
 config_dir = home / ".config"
-config.mkdir(exist_ok=True)
+config_dir.mkdir(exist_ok=True)
 module_path = pathlib.Path(__file__).parent.absolute()
 repo_path = module_path.parent
 
