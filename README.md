@@ -41,15 +41,15 @@ You can comment them in `.pre-commit-config.yaml`
 
 See `.github/workflows`
 
-- pythonapp.yml
-    - checks linter
-    - runs test with pytest
+- pythonapp.yml: runs on every push and every night
+    - flake8 linter checks syntax 
+    - pytest runs tests
 - pythonpublish.yml
     - publishes to PyPI any new releases, need to add Pypi token
 
 ### README
 
-- **README should use markdown format**
+- **README uses markdown format**
 
 ### LICENSE
 
