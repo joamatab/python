@@ -7,7 +7,6 @@ author = "{{ cookiecutter.author_name }}"
 
 master_doc = "index"
 html_theme = "sphinx_rtd_theme"
-intersphinx_mapping = {"python": ("https://docs.python.org/3/", None)}
 
 source_suffix = {
     ".rst": "restructuredtext",
@@ -23,7 +22,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.napoleon",
     "sphinx.ext.todo",
-    "sphinx.ext.linkcode",
+    "sphinx.ext.viewcode",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_markdown_tables",
     "sphinx.ext.doctest",
@@ -31,7 +30,6 @@ extensions = [
 ]
 
 autodoc_member_order = "bysource"
-
 
 def setup(app):
     app.add_config_value(
@@ -42,10 +40,3 @@ def setup(app):
     app.add_transform(AutoStructify)
 
 
-def linkcode_resolve(domain, info):
-    if domain != "py":
-        return None
-    if not info["module"]:
-        return None
-    filename = info["module"].replace(".", "/")
-    return "{{ cookiecutter.package_url }}/blob/master/{}.py".format(filename)
