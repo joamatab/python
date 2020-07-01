@@ -83,6 +83,24 @@ You should then change the classifiers in `{{ package_name }}/setup.py` - it ass
   But the best practices are to use [PyTest fixtures](https://docs.pytest.org/en/latest/fixture.html) which provides a better solution.
   Therefore, the `tests` directory has no `__init__.py` file.
 
+### Docs
+
+you can mix and match markdown and RST syntax in the index for your docs. I prefer markdown.
+
+To build the docs you need to have the package itself installed, you can do this by:
+```bash
+cd path_to_your_repo
+make install
+cd docs
+```
+
+Alternatively, you can install the dependencies of the package as:
+```bash
+cd path_to_your_repo
+make python-deps
+cd docs
+make html
+```
 
 # References
 
