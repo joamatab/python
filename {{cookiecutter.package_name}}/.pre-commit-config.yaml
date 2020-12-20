@@ -6,11 +6,17 @@ repos:
           - id: end-of-file-fixer
           - id: trailing-whitespace
 
-
-    - repo: https://github.com/asottile/reorder_python_imports
+    - repo: https://github.com/hakancelik96/unimport
+      rev: stable
+      hooks:
+          - id: unimport
+            args: [--remove, --requirements, --include-star-import]
+    - repo: https://github.com/pycqa/isort
       rev: ""
       hooks:
-          - id: reorder-python-imports
+          - id: isort
+            files: "pp/.*"
+            args: ["--profile", "black", "--filter-files"]
 
     - repo: https://github.com/psf/black
       rev: ""
@@ -25,5 +31,15 @@ repos:
     - repo: https://github.com/kynan/nbstripout
       rev: master
       hooks:
-        - id: nbstripout
-          files: ".ipynb"
+          - id: nbstripout
+            files: ".ipynb"
+
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: ""
+      hooks:
+          - id: mypy
+            exclude: ^(docs/|example-plugin/|tests/fixtures)
+    - repo: https://github.com/pycqa/pydocstyle
+      rev: ""
+      hooks:
+          - id: pydocstyle

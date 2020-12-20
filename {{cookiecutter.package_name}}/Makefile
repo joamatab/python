@@ -1,12 +1,30 @@
 
 install: 
 	pip install -r requirements.txt --upgrade
+	pip install -r requirements_dev.txt --upgrade
 	pip install -e .
-	pip install pre-commit
 	pre-commit install
-
-lint:
-	flake8
 
 test:
 	pytest
+
+cov:
+	pytest --cov= {{ cookiecutter.package_name }}
+
+mypy:
+	mypy . --ignore-missing-imports
+
+lint:
+	flake8 
+
+pylint:
+	pylint {{ cookiecutter.package_name }}
+
+lintd2:
+	flake8 --select RST
+
+lintd:
+	pydocstyle {{ cookiecutter.package_name }}
+
+doc8:
+	doc8 docs/
