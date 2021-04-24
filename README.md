@@ -23,7 +23,7 @@ The Makefile provides you with
 
 ### Precommit hooks
 
-Ensures that the code that you commit follows some standards:
+[Precommit hooks](https://pre-commit.com/) enforces that the code that you commit follows some standards:
 
 You can comment them in `.pre-commit-config.yaml`
 
@@ -45,7 +45,7 @@ See `.github/workflows`
     - flake8 linter checks syntax 
     - pytest runs tests
 - pythonpublish.yml
-    - publishes to PyPI any new releases, need to add Pypi token
+    - publishes to PyPI any new releases, need to add Pypi token to your Github account
 
 ### README
 
@@ -85,7 +85,14 @@ You should then change the classifiers in `{{ package_name }}/setup.py` - it ass
 
 ### Docs
 
-you can mix and match markdown and RST syntax in the index for your docs. I prefer markdown.
+# you can mix and match markdown and RST syntax in the index for your docs.
+
+I prefer markdown but I also embed RST commands as
+
+```eval_rst
+
+.. autofunction:: module.function_name
+```
 
 To build the docs you need to have the package itself installed, you can do this by:
 ```bash
