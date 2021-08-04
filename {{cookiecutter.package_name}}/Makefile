@@ -28,3 +28,6 @@ lintd:
 
 doc8:
 	doc8 docs/
+
+update:
+	pur

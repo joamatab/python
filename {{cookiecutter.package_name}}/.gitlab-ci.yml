@@ -9,13 +9,58 @@ before_script:
 
 stages:
   - test
-  - release
   - linter
+  - release
 
 test:
   stage: test
   script:
     - pytest
+
+python37:
+  image: python:3.7
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e py37
+
+python38:
+  image: python:3.8
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e py38
+
+python39:
+  image: python:3.9
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e py39
+
+linter:
+  stage: linter
+  script:
+    - make lint
+
+doctest:
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e docs
+
+flake8:
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e flake8
+
+mypy:
+  stage: test
+  script:
+    - python -m pip install tox
+    - python -m tox -e mypy
+
 
 docs:
   stage: release
@@ -24,8 +69,3 @@ docs:
     - make install clean html upload
   only:
     - release
-
-linter:
-  stage: linter
-  script:
-    - make lint

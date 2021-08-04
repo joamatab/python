@@ -11,3 +11,4 @@ flake8
 tox
 doc8
 pydocstyle
+pur
