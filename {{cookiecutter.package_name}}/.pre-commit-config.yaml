@@ -15,7 +15,7 @@ repos:
       rev: ""
       hooks:
           - id: isort
-            files: "pp/.*"
+            files: "{{ cookiecutter.package_name }}/.*"
             args: ["--profile", "black", "--filter-files"]
 
     - repo: https://github.com/psf/black
