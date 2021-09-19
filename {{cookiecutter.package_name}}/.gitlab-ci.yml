@@ -9,8 +9,14 @@ before_script:
 
 stages:
   - test
-  - linter
   - release
+
+pre-commit:
+  stage: test
+  script:
+    - pip install pre-commit
+    - pre-commit install
+    - pre-commit run -a
 
 test:
   stage: test
@@ -38,11 +44,6 @@ python39:
     - python -m pip install tox
     - python -m tox -e py39
 
-linter:
-  stage: linter
-  script:
-    - make lint
-
 doctest:
   stage: test
   script:
@@ -60,7 +61,6 @@ mypy:
   script:
     - python -m pip install tox
     - python -m tox -e mypy
-
 
 docs:
   stage: release

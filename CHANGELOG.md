@@ -1,4 +1,11 @@
-# 2020-12-19 0.0.2
+# CHANGELOG
+
+## 0.0.3
+
+- added pre-commmit CI/CD for gitlab
+- rename CONFIG to PATH
+
+## 0.0.2
 
 - pydocstyle: check docs
 - pylint for syntax
