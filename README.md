@@ -19,7 +19,14 @@ The decisions `cookiecutter-pypackage-minimal` makes should all be explained her
 
 ### Makefile
 
-The Makefile provides you with
+The Makefile provides you with an easy way to:
+
+- install: the package
+- test: run tests
+- cov: get test coverage
+- mypy: check types
+- pylint: check for syntax errors
+- update: update requirements.txt
 
 ### Precommit hooks
 
@@ -85,7 +92,7 @@ You should then change the classifiers in `{{ package_name }}/setup.py` - it ass
 
 ### Docs
 
-# you can mix and match markdown and RST syntax in the index for your docs.
+you can mix and match markdown and RST syntax in the index for your docs.
 
 I prefer markdown but I also embed RST commands as
 
