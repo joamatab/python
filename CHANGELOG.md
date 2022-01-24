@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.0.4
+
+- improve CI/CD speed:
+    - replace tox by pytest
+
 ## 0.0.3
 
 - added pre-commmit CI/CD for gitlab
