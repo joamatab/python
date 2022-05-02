@@ -32,5 +32,5 @@ doc8:
 update:
 	pur
 
-update2:
+update-pre:
 	pre-commit autoupdate --bleeding-edge
