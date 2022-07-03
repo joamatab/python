@@ -1,25 +1,25 @@
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: "1ca4ceba9609a60c79160b461f7336aa615e4813"
+      rev: "b0f06dc9f2260909f3423243de180edfc823ec5a"
       hooks:
           - id: check-yaml
           - id: end-of-file-fixer
           - id: trailing-whitespace
 
     - repo: https://github.com/hakancelik96/unimport
-      rev: 0.9.2
+      rev: df8eb1a4c91acb84da197828af8157708968b596
       hooks:
           - id: unimport
             args: [--remove, --include-star-import]
     - repo: https://github.com/pycqa/isort
-      rev: "24c98ec4a3c826b44f4d7b06ebfe09a485d2fbcf"
+      rev: "12cc5fbd67eebf92eb2213b03c07b138ae1fb448"
       hooks:
           - id: isort
             files: "{{ cookiecutter.package_name }}/.*"
             args: ["--profile", "black", "--filter-files"]
 
     - repo: https://github.com/psf/black
-      rev: "3b2a7d196bc1984aed194cca26a7900968ce4409"
+      rev: "6debce63bc2429b1680f8838592f2e56e3df6b27"
       hooks:
           - id: black
 
@@ -29,7 +29,7 @@ repos:
           - id: flake8
 
     - repo: https://github.com/kynan/nbstripout
-      rev: 3843f5f7c586fa6f0df81423f35d52e6af8e3039
+      rev: 8cafdcc393232045208137698dbeb42d6e0dd9e8
       hooks:
           - id: nbstripout
             files: ".ipynb"
