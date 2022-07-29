@@ -9,21 +9,18 @@ test:
 	pytest
 
 cov:
-	pytest --cov= {{ cookiecutter.package_name }}
+	pytest --cov={{ cookiecutter.package_name }}
 
 mypy:
 	mypy . --ignore-missing-imports
 
-lint:
-	flake8 
+flake8:
+	flake8 --select RST
 
 pylint:
 	pylint {{ cookiecutter.package_name }}
 
-lintd2:
-	flake8 --select RST
-
-lintd:
+pydocstyle:
 	pydocstyle {{ cookiecutter.package_name }}
 
 doc8:
