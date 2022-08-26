@@ -70,19 +70,19 @@ repos:
         exclude: ^(docs/|example-plugin/|tests/fixtures)
         additional_dependencies:
           - "pydantic"
-  - repo: https://github.com/terrencepreilly/darglint
-    rev: master
-    hooks:
-      - id: darglint
+  # - repo: https://github.com/terrencepreilly/darglint
+  #   rev: master
+  #   hooks:
+  #     - id: darglint
 
   - repo: https://github.com/pycqa/pydocstyle
-    rev: ""
+    rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
     hooks:
-      - id: pydocstyle
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
-    hooks:
-      - id: reorder-python-imports
+        - id: pydocstyle
+  # - repo: https://github.com/asottile/reorder_python_imports
+  #   rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
+  #   hooks:
+  #     - id: reorder-python-imports
   # - repo: https://github.com/PyCQA/pylint
   #   rev: v2.14.1
   #   hooks:
