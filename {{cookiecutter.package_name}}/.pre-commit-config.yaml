@@ -1,9 +1,18 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "afb705d488f95978d2bf1459e05e9b7e3dca03ac"
+    rev: "a41c4b94b220171e928ff3e6c9bef34e71267f46"
     hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
       - id: check-yaml
+      - id: debug-statements
       - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: name-tests-test
+        args: ["--pytest-test-first"]
+      - id: requirements-txt-fixer
       - id: trailing-whitespace
 
   - repo: https://github.com/hakancelik96/unimport
@@ -51,10 +60,10 @@ repos:
     hooks:
       - id: shellcheck
 
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: 7b4409161486c6956bb3206ce96db5d56731b1b9 # Use the ref you want to point at
-    hooks:
-      - id: python-use-type-annotations
+  # - repo: https://github.com/pre-commit/pygrep-hooks
+  #   rev: 7b4409161486c6956bb3206ce96db5d56731b1b9 # Use the ref you want to point at
+  #   hooks:
+  #     - id: python-use-type-annotations
 
   - repo: https://github.com/PyCQA/bandit
     rev: d9fe642e01866e460454641bcd14b9de9d2b1478
@@ -78,7 +87,7 @@ repos:
   - repo: https://github.com/pycqa/pydocstyle
     rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
     hooks:
-        - id: pydocstyle
+      - id: pydocstyle
   # - repo: https://github.com/asottile/reorder_python_imports
   #   rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
   #   hooks:
@@ -106,3 +115,14 @@ repos:
   #   rev: 0.1.0 # or specific tag
   #   hooks:
   #       - id: yamlfmt
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: "77c4a0f2d3edd699ff7c2c5e430d46cd85358768"
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+      - id: python-no-log-warn
+      - id: python-no-eval
+      - id: python-use-type-annotations
+      - id: rst-backticks
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
