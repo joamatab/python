@@ -23,3 +23,7 @@ open:
 	open build/html/index.html
 
 see: html open
+
+links:
+	ln -sf ../CHANGELOG.md
+	ln -sf ../README.md

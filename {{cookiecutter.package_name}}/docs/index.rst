@@ -8,5 +8,6 @@
     README
     markdown
     rst
+    CHANGELOG
 
 
