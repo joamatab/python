@@ -1,12 +1,10 @@
 
 install: 
-	pip install -r requirements.txt --upgrade
-	pip install -r requirements_dev.txt --upgrade
-	pip install -e .
+	pip install -e .[dev]
 	pre-commit install
 
 test:
-	pytest
+	pytest -s
 
 cov:
 	pytest --cov={{ cookiecutter.package_name }}
