@@ -19,7 +19,7 @@ authors = [
     {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"},
 ]
 keywords = ["python"]
-license = {text = "MIT"}
+license = {file = "LICENSE"}
 dependencies = [
     "xmltodict",
 ]
