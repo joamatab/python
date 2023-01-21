@@ -83,12 +83,11 @@ repos:
   #   rev: master
   #   hooks:
   #     - id: darglint
-
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
-    hooks:
-      - id: pydocstyle
-        additional_dependencies: ["pydocstyle[toml]"]
+  # - repo: https://github.com/pycqa/pydocstyle
+  #   rev: "a6fe4222012e990042c86cdaaa904a8d059752ee"
+  #   hooks:
+  #     - id: pydocstyle
+  #       additional_dependencies: ["pydocstyle[toml]"]
   # - repo: https://github.com/asottile/reorder_python_imports
   #   rev: 2b2f0c74acdb3de316e23ceb7dd0d7945c354050
   #   hooks:
@@ -127,3 +126,18 @@ repos:
       - id: rst-backticks
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 220dacf44e6cc234b8ef87863a31ff9d46dad920
+    hooks:
+      - id: nbqa-black
+        additional_dependencies: [jupytext, black] # optional, only if you're using Jupytext
+      - id: nbqa-pyupgrade
+        args: ["--py37-plus"]
+      # - id: nbqa-flake8
+      # - id: nbqa-isort
+      #   args: ["--float-to-top"]
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: "v0.0.221"
+    hooks:
+      - id: ruff
+        args: ["--force-exclude"]

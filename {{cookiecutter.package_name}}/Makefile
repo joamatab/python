@@ -18,8 +18,8 @@ flake8:
 pylint:
 	pylint {{ cookiecutter.package_name }}
 
-pydocstyle:
-	pydocstyle {{ cookiecutter.package_name }}
+ruff:
+	ruff --fix {{ cookiecutter.package_name }}/*.py
 
 doc8:
 	doc8 docs/
