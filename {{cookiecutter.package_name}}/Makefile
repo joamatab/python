@@ -26,3 +26,15 @@ update:
 
 update-pre:
 	pre-commit autoupdate --bleeding-edge
+
+git-rm-merged:
+	git branch -D `git branch --merged | grep -v \* | xargs`
+
+release:
+	git push
+	git push origin --tags
+
+build:
+	rm -rf dist
+	pip install build
+	python -m build
