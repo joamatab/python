@@ -12,17 +12,14 @@ cov:
 mypy:
 	mypy . --ignore-missing-imports
 
-flake8:
-	flake8 --select RST
-
 pylint:
 	pylint {{ cookiecutter.package_name }}
 
 ruff:
 	ruff --fix {{ cookiecutter.package_name }}/*.py
 
-doc8:
-	doc8 docs/
+git-rm-merged:
+	git branch -D `git branch --merged | grep -v \* | xargs`
 
 update:
 	pur
