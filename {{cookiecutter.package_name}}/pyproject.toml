@@ -21,7 +21,7 @@ authors = [
 keywords = ["python"]
 license = {file = "LICENSE"}
 dependencies = [
-    "xmltodict",
+    "matplotlib",
 ]
 readme = "README.md"
 requires-python = ">=3.7"
