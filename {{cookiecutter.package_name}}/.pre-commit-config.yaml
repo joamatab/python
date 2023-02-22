@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "a41c4b94b220171e928ff3e6c9bef34e71267f46"
+    rev: "9260cbc9c84c06022993bfbcc42fdbf0305c5b8e"
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -15,48 +15,48 @@ repos:
       - id: requirements-txt-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/hakancelik96/unimport
-    rev: 004b5dd0c8112330275beb52c4ccfce016a4b945
-    hooks:
-      - id: unimport
-        args: [--remove, --include-star-import]
-  - repo: https://github.com/pycqa/isort
-    rev: "12cc5fbd67eebf92eb2213b03c07b138ae1fb448"
-    hooks:
-      - id: isort
-        files: "{{ cookiecutter.package_name }}/.*"
-        args: ["--profile", "black", "--filter-files"]
+  # - repo: https://github.com/hakancelik96/unimport
+  #   rev: 0.14.1
+  #   hooks:
+  #     - id: unimport
+  #       args: [--remove, --include-star-import]
+  # - repo: https://github.com/pycqa/isort
+  #   rev: "3a72e069635a865a92b8a0273aa829f630cbcd6f"
+  #   hooks:
+  #     - id: isort
+  #       files: "demo_project/.*"
+  #       args: ["--profile", "black", "--filter-files"]
 
   - repo: https://github.com/psf/black
-    rev: "d4a85643a465f5fae2113d07d22d021d4af4795a"
+    rev: "d9b8a6407e2f46304a8d36b18e4a73d8e0613519"
     hooks:
       - id: black
 
-  - repo: https://github.com/pycqa/flake8
-    rev: "647996c743f9e77368ce46cc74abe98549dd4c3a"
-    hooks:
-      - id: flake8
+  # - repo: https://github.com/pycqa/flake8
+  #   rev: "647996c743f9e77368ce46cc74abe98549dd4c3a"
+  #   hooks:
+  #     - id: flake8
 
   - repo: https://github.com/kynan/nbstripout
-    rev: 4e0f64cf03b52e2aa54f7dd57c722e1a04a439f6
+    rev: e4c5b4dcbab4afa0b88b7a9243db42b1a8d95dde
     hooks:
       - id: nbstripout
         files: ".ipynb"
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: 4c7ee5abff7f53f8be0bacb0974c63cbd413bae6
+    rev: ddb39ad37166dbc938d853cc77606526a0b1622a
     hooks:
       - id: pyupgrade
         args: [--py37-plus, --keep-runtime-typing]
 
-  - repo: https://github.com/codespell-project/codespell
-    rev: 6a9d7a7a7d0db950a1bd8d5ecdd3298f114d2a12
-    hooks:
-      - id: codespell
-        args: ["-L TE,TE/TM,te,ba,FPR,fpr_spacing,ro,donot"]
+  # - repo: https://github.com/codespell-project/codespell
+  #   rev: 68ea3cff5eba266e0814794cce6cd19537f58137
+  #   hooks:
+  #     - id: codespell
+  #       args: ["-L TE,TE/TM,te,ba,FPR,fpr_spacing,ro,donot"]
 
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: 5dbc9746f876e3acee90e75113792699b64aed43
+    rev: 953faa6870f6663ac0121ab4a800f1ce76bca31f
     hooks:
       - id: shellcheck
 
@@ -66,14 +66,14 @@ repos:
   #     - id: python-use-type-annotations
 
   - repo: https://github.com/PyCQA/bandit
-    rev: d9fe642e01866e460454641bcd14b9de9d2b1478
+    rev: fe1361fdcc274850d4099885a802f2c9f28aca08
     hooks:
       - id: bandit
         args: [--exit-zero]
         # ignore all tests, not just tests data
         exclude: ^tests/
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v0.991"
+    rev: "v1.0.1"
     hooks:
       - id: mypy
         exclude: ^(docs/|example-plugin/|tests/fixtures)
@@ -116,7 +116,7 @@ repos:
   #   hooks:
   #       - id: yamlfmt
   - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: "77c4a0f2d3edd699ff7c2c5e430d46cd85358768"
+    rev: "f6fb13e9516d1a9720a30a4049c930235abd642e"
     hooks:
       - id: python-check-blanket-noqa
       - id: python-check-blanket-type-ignore
@@ -127,7 +127,7 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 220dacf44e6cc234b8ef87863a31ff9d46dad920
+    rev: 952c895a21aced4601165c43f77188559a5e825c
     hooks:
       - id: nbqa-black
         additional_dependencies: [jupytext, black] # optional, only if you're using Jupytext
@@ -137,7 +137,6 @@ repos:
       # - id: nbqa-isort
       #   args: ["--float-to-top"]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.221"
+    rev: "v0.0.251"
     hooks:
       - id: ruff
-        args: ["--force-exclude"]
