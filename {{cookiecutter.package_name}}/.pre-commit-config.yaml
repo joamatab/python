@@ -12,7 +12,6 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
         args: ["--pytest-test-first"]
-      - id: requirements-txt-fixer
       - id: trailing-whitespace
 
   # - repo: https://github.com/hakancelik96/unimport
@@ -37,11 +36,11 @@ repos:
   #   hooks:
   #     - id: flake8
 
-  - repo: https://github.com/kynan/nbstripout
-    rev: e4c5b4dcbab4afa0b88b7a9243db42b1a8d95dde
-    hooks:
-      - id: nbstripout
-        files: ".ipynb"
+  # - repo: https://github.com/kynan/nbstripout
+  #   rev: e4c5b4dcbab4afa0b88b7a9243db42b1a8d95dde
+  #   hooks:
+  #     - id: nbstripout
+  #       files: ".ipynb"
 
   - repo: https://github.com/asottile/pyupgrade
     rev: ddb39ad37166dbc938d853cc77606526a0b1622a
@@ -115,28 +114,28 @@ repos:
   #   rev: 0.1.0 # or specific tag
   #   hooks:
   #       - id: yamlfmt
-  - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: "f6fb13e9516d1a9720a30a4049c930235abd642e"
-    hooks:
-      - id: python-check-blanket-noqa
-      - id: python-check-blanket-type-ignore
-      - id: python-no-log-warn
-      - id: python-no-eval
-      - id: python-use-type-annotations
-      - id: rst-backticks
-      - id: rst-directive-colons
-      - id: rst-inline-touching-normal
-  - repo: https://github.com/nbQA-dev/nbQA
-    rev: 952c895a21aced4601165c43f77188559a5e825c
-    hooks:
-      - id: nbqa-black
-        additional_dependencies: [jupytext, black] # optional, only if you're using Jupytext
-      - id: nbqa-pyupgrade
-        args: ["--py37-plus"]
+  # - repo: https://github.com/pre-commit/pygrep-hooks
+  #   rev: "f6fb13e9516d1a9720a30a4049c930235abd642e"
+  #   hooks:
+  #     - id: python-check-blanket-noqa
+  #     - id: python-check-blanket-type-ignore
+  #     - id: python-no-log-warn
+  #     - id: python-no-eval
+  #     - id: python-use-type-annotations
+  #     - id: rst-backticks
+  #     - id: rst-directive-colons
+  #     - id: rst-inline-touching-normal
+  # - repo: https://github.com/nbQA-dev/nbQA
+  #   rev: 952c895a21aced4601165c43f77188559a5e825c
+  #   hooks:
+  #     - id: nbqa-black
+  #       additional_dependencies: [jupytext, black] # optional, only if you're using Jupytext
+  #     - id: nbqa-pyupgrade
+  #       args: ["--py37-plus"]
       # - id: nbqa-flake8
       # - id: nbqa-isort
       #   args: ["--float-to-top"]
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.251"
+    rev: "6a0ba1854991b693612486cc84a2254de82d071d"
     hooks:
       - id: ruff

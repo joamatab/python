@@ -77,10 +77,7 @@ jobs:
           echo $CONDA/bin >> $GITHUB_PATH
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          sudo apt install pandoc
-          make install
+          make dev
       - name: Test documentation
         run: |
-          cd docs
-          make html
+          make docs
