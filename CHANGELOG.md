@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.5
+
+- jupyter book schema
+
 ## 0.0.4
 
 - improve CI/CD speed:
