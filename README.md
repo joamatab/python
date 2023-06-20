@@ -1,4 +1,4 @@
-# Python package template 0.0.4
+# Python package template 0.0.5
 
 # Usage
 
