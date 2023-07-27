@@ -124,6 +124,9 @@ include_trailing_comma = true
 [tool.setuptools.package-data]
 mypkg = ["*.csv", "*.yaml"]
 
+[tool.codespell]
+ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
+
 [tool.pydocstyle]
 inherit = false
 match = "(?!test).*\\.py"
