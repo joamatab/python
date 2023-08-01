@@ -50,6 +50,18 @@ repos:
         exclude: ^(docs/|example-plugin/|tests/fixtures)
         additional_dependencies:
           - "pydantic"
+           
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: d2425a62376c2197448cce2f825d5a0c3926b862
+    hooks:
+      - id: pretty-format-toml
+        args: [--autofix]
+
+  - repo: https://github.com/aristanetworks/j2lint.git
+    rev: 1f242682122fa258557e429f1b92fadd6d2be2d4
+    hooks:
+      - id: j2lint
+        args: [--ignore, jinja-statements-delimiter, jinja-statements-indentation, --]
             
   # - repo: https://github.com/terrencepreilly/darglint
   #   rev: master
