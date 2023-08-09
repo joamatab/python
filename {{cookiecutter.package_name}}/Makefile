@@ -6,7 +6,6 @@ install:
 dev:
 	pip install -e .[dev,docs]
 
-
 test:
 	pytest -s
 
@@ -18,9 +17,6 @@ mypy:
 
 pylint:
 	pylint {{ cookiecutter.package_name }}
-
-ruff:
-	ruff --fix {{ cookiecutter.package_name }}/*.py
 
 git-rm-merged:
 	git branch -D `git branch --merged | grep -v \* | xargs`
@@ -48,7 +44,6 @@ jupytext:
 
 notebooks:
 	jupytext docs/**/*.py --to ipynb
-
 
 docs:
 	jb build docs
