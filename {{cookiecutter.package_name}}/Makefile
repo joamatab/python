@@ -1,4 +1,3 @@
-
 install: 
 	pip install -e .[dev]
 	pre-commit install
@@ -29,10 +28,6 @@ update-pre:
 
 git-rm-merged:
 	git branch -D `git branch --merged | grep -v \* | xargs`
-
-release:
-	git push
-	git push origin --tags
 
 build:
 	rm -rf dist

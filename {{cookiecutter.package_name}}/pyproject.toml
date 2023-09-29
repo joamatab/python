@@ -72,13 +72,6 @@ addopts = '--tb=short'
 python_files = ["{{ cookiecutter.package_name }}/*.py", "notebooks/*.ipynb", "tests/*.py"]
 norecursedirs = ["extra/*.py"]
 
-[tool.commitizen]
-name = "cz_conventional_commits"
-version = "0.1.0"
-version_files = [
-    "pyproject.toml:version",
-]
-
 [tool.mypy]
 python_version = "3.10"
 strict = true
@@ -88,25 +81,17 @@ enabled = true
 live_mode = true
 strict = true
 
-[tool.isort]
-multi_line_output = 3
-line_length = 88
-include_trailing_comma = true
-# skip = "{{cookiecutter.package_name}}/__init__.py"
-
 [tool.setuptools.package-data]
 mypkg = ["*.csv", "*.yaml"]
 
 [tool.codespell]
 ignore-words-list = "te, te/tm, te, ba, fpr, fpr_spacing, ro, nd, donot, schem"
 
-[tool.pydocstyle]
-inherit = false
-match = "(?!test).*\\.py"
-add-ignore = ["D100","D101","D102","D103","D104","D203","D405","D417"]
+[tool.ruff.pydocstyle]
 convention = "google"
 
 [tool.ruff]
+fix = true
 select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
@@ -123,3 +108,37 @@ ignore = [
     "B905",  # `zip()` without an explicit `strict=` parameter
     "C408",  # C408 Unnecessary `dict` call (rewrite as a literal)
 ]
+
+[tool.tbump]
+# Uncomment this if your project is hosted on GitHub:
+# github_url = "https://github.com/<user or organization>/<project>/"
+
+[tool.tbump.version]
+current = "0.9.0"
+
+# Example of a semver regexp.
+# Make sure this matches current_version before
+# using tbump
+regex = '''
+  (?P<major>\d+)
+  \.
+  (?P<minor>\d+)
+  \.
+  (?P<patch>\d+)
+  '''
+
+[tool.tbump.git]
+message_template = "Bump to {new_version}"
+tag_template = "v{new_version}"
+
+# For each file to patch, add a [[file]] config
+# section containing the path of the file, relative to the
+# tbump.toml location.
+[[tool.tbump.file]]
+src = "README.md"
+
+[[tool.tbump.file]]
+src = "pyproject.toml"
+
+[[tool.tbump.file]]
+src = "{{ cookiecutter.package_name }}/__init__.py"
