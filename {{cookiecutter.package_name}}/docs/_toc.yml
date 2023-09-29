@@ -3,6 +3,13 @@
 
 format: jb-book
 root: index
-chapters:
-  - file: api
-  - file: changelog
+parts:
+  # - caption: Tutorial
+  #   chapters:
+  #     - file: tutorial
+  #       sections:
+  #         - file: notebooks/demo
+  - caption: Reference
+    chapters:
+      - file: api
+      - file: changelog

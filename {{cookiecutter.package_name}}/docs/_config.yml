@@ -9,7 +9,7 @@ author: {{ cookiecutter.author_name }}
 execute:
   execute_notebooks: cache
   timeout: -1
-  allow_errors: true
+  allow_errors: false
   # execute_notebooks: force
   # execute_notebooks: "off"
   # exclude_patterns:
@@ -46,7 +46,6 @@ sphinx:
     - "sphinx.ext.napoleon"
     - "sphinx.ext.viewcode"
     - "matplotlib.sphinxext.plot_directive"
-    - "sphinxcontrib.autodoc_pydantic"
   config:
     #autodoc_typehints: description
     autodoc_type_aliases:
