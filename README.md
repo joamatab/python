@@ -12,9 +12,9 @@ cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
 It will ask you some questions to fill the template
 
 
-# Explanation
+## 🚀 Features
 
-The decisions `cookiecutter-pypackage-minimal` makes should all be explained here.
+In this [cookiecutter 🍪](https://github.com/cookiecutter/cookiecutter) template we combine state-of-the-art libraries and best development practices for Python.
 
 
 ### Makefile
