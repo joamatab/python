@@ -26,15 +26,14 @@ def remove_unused_files(
         directory: path to the project directory
         module_name: project module name
     """
-    files_to_delete: List[Path] = []
-
     if cicd == "github":
-        files_to_delete.extend(directory / ".gitlab-ci.yml")
-    else:
-        files_to_delete.extend(directory / ".github")
+        files_to_delete = [directory / ".gitlab-ci.yml"]
 
-    for path in files_to_delete:
-        path.unlink()
+        for path in files_to_delete:
+            path.unlink()
+    else:
+        dirpath = directory / ".github"
+        rmtree(dirpath)
 
 
 def print_futher_instuctions(package_name: str, github: str) -> None:
