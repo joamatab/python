@@ -13,12 +13,8 @@ PROJECT_MODULE = (
 )
 CICD = "{{ cookiecutter.cicd }}"
 
-# Values to generate correct license
-LICENSE = "{{ cookiecutter.license }}"
-ORGANIZATION = "{{ cookiecutter.organization }}"
-
 # Values to generate github repository
-GITHUB_USER = "{{ cookiecutter.github_name }}"
+GITHUB_USER = "{{ cookiecutter.author_name }}"
 
 
 def remove_unused_files(

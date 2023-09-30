@@ -4,8 +4,7 @@ import re
 import sys
 
 PROJECT_NAME = "{{ cookiecutter.package_name }}"
-PROJECT_VERSION = "{{ cookiecutter.version }}"
-LINE_LENGTH_PARAMETER = "{{ cookiecutter.line_length }}"
+PROJECT_VERSION = "{{ cookiecutter.package_version }}"
 
 
 MODULE_REGEX = re.compile(r"^[a-z][a-z0-9\-\_]+[a-z0-9]$")
@@ -80,7 +79,6 @@ def main() -> None:
     try:
         validate_package_name(package_name=PROJECT_NAME)
         validate_semver(version=PROJECT_VERSION)
-        validate_line_length(line_length=int(LINE_LENGTH_PARAMETER))
     except ValueError as ex:
         print(ex)
         sys.exit(1)
