@@ -7,8 +7,8 @@ from shutil import move, rmtree
 
 # Project root directory
 PROJECT_DIRECTORY = Path.cwd().absolute()
-PROJECT_NAME = "{{ cookiecutter.project_name }}"
-PROJECT_MODULE = "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+PROJECT_NAME = "{{ cookiecutter.package_name }}"
+PROJECT_MODULE = "{{ cookiecutter.package_name.lower().replace(' ', '_').replace('-', '_') }}"
 CREATE_EXAMPLE_TEMPLATE = "{{ cookiecutter.create_example_template }}"
 
 # Values to generate correct license
@@ -39,19 +39,19 @@ def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: b
         path.unlink()
 
 
-def print_futher_instuctions(project_name: str, github: str) -> None:
+def print_futher_instuctions(package_name: str, github: str) -> None:
     """Show user what to do next after project creation.
 
     Args:
-        project_name: current project name
+        package_name: current project name
         github: GitHub username
     """
     message = f"""
-    Your project {project_name} is created.
+    Your project {package_name} is created.
 
     1) Now you can start working on it:
 
-        $ cd {project_name} && git init
+        $ cd {package_name} && git init
 
     2) If you don't have Poetry installed run:
 
@@ -66,7 +66,7 @@ def print_futher_instuctions(project_name: str, github: str) -> None:
         $ git add .
         $ git commit -m ":tada: Initial commit"
         $ git branch -M main
-        $ git remote add origin https://github.com/{github}/{project_name}.git
+        $ git remote add origin https://github.com/{github}/{package_name}.git
         $ git push -u origin main
     """
     print(textwrap.dedent(message))
@@ -78,7 +78,7 @@ def main() -> None:
     #     module_name=PROJECT_MODULE,
     #     need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
     # )
-    print_futher_instuctions(project_name=PROJECT_NAME, github=GITHUB_USER)
+    print_futher_instuctions(package_name=PROJECT_NAME, github=GITHUB_USER)
 
 
 if __name__ == "__main__":
