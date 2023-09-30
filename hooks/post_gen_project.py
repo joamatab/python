@@ -50,10 +50,6 @@ def print_futher_instuctions(package_name: str, github: str) -> None:
 
         $ cd {package_name} && git init
 
-    2) If you don't have Poetry installed run:
-
-        $ make poetry-download
-
     2) install package in developer mode
 
         $ pip install -e .[dev]
