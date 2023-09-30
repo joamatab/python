@@ -4,6 +4,7 @@
     "package_description": "your package description. What is this package for?",
     "package_url": "https://github.com/",
     "author_name": "your_name",
+    "author_email": "your_email@gmail.com",
     "cicd": ["github", "gitlab"],
     "_copy_without_render": [
         ".github/workflows"
