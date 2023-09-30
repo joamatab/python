@@ -1,4 +1,5 @@
 # Python package template 0.0.5
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # Usage
 
@@ -6,7 +7,7 @@ Start a new python project running
 
 ```
 pip install cookiecutter
-cookiecutter https://github.com/joamatab/cookiecutter-pypackage-minimal
+cookiecutter gh:joamatab/cookiecutter-pypackage-minimal
 ```
 
 It will ask you some questions to fill the template
@@ -25,8 +26,8 @@ The Makefile provides you with an easy way to:
 - test: run tests
 - cov: get test coverage
 - mypy: check types
-- pylint: check for syntax errors
-- update: update requirements.txt
+- ruff: fixer
+
 
 ### Precommit hooks
 
