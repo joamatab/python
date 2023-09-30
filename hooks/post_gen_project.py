@@ -8,8 +8,10 @@ from shutil import move, rmtree
 # Project root directory
 PROJECT_DIRECTORY = Path.cwd().absolute()
 PROJECT_NAME = "{{ cookiecutter.package_name }}"
-PROJECT_MODULE = "{{ cookiecutter.package_name.lower().replace(' ', '_').replace('-', '_') }}"
-CREATE_EXAMPLE_TEMPLATE = "{{ cookiecutter.create_example_template }}"
+PROJECT_MODULE = (
+    "{{ cookiecutter.package_name.lower().replace(' ', '_').replace('-', '_') }}"
+)
+CICD = "{{ cookiecutter.cicd }}"
 
 # Values to generate correct license
 LICENSE = "{{ cookiecutter.license }}"
@@ -19,21 +21,21 @@ ORGANIZATION = "{{ cookiecutter.organization }}"
 GITHUB_USER = "{{ cookiecutter.github_name }}"
 
 
-def remove_unused_files(directory: Path, module_name: str, need_to_remove_cli: bool) -> None:
+def remove_unused_files(
+    directory: Path, module_name: str, cicd: str = "github"
+) -> None:
     """Remove unused files.
 
     Args:
         directory: path to the project directory
         module_name: project module name
-        need_to_remove_cli: flag for removing CLI related files
     """
     files_to_delete: List[Path] = []
 
-    def _cli_specific_files() -> List[Path]:
-        return [directory / module_name / "__main__.py"]
-
-    if need_to_remove_cli:
-        files_to_delete.extend(_cli_specific_files())
+    if cicd == "github":
+        files_to_delete.extend(directory / ".gitlab-ci.yml")
+    else:
+        files_to_delete.extend(directory / ".github")
 
     for path in files_to_delete:
         path.unlink()
@@ -73,11 +75,11 @@ def print_futher_instuctions(package_name: str, github: str) -> None:
 
 
 def main() -> None:
-    # remove_unused_files(
-    #     directory=PROJECT_DIRECTORY,
-    #     module_name=PROJECT_MODULE,
-    #     need_to_remove_cli=CREATE_EXAMPLE_TEMPLATE != "cli",
-    # )
+    remove_unused_files(
+        directory=PROJECT_DIRECTORY,
+        module_name=PROJECT_MODULE,
+        cicd=CICD,
+    )
     print_futher_instuctions(package_name=PROJECT_NAME, github=GITHUB_USER)
 
 
