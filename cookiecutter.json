@@ -1,10 +1,11 @@
 {
-    "author_name": "your_name",
-    "author_email": "your_email@gmail.com",
     "package_name": "your_package_name",
     "package_version": "0.0.1",
     "package_description": "your package description. What is this package for?",
-    "package_url": "https://github.com/joamatab/cookiecutter-pypackage-minimal",
+    "package_url": "https://github.com/",
+    "author_name": "your_name",
+    "author_email": "your_email@gmail.com",
+    "cicd": ["github", "gitlab"],
     "_copy_without_render": [
         ".github/workflows"
     ]
