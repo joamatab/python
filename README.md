@@ -7,7 +7,7 @@ Start a new python project running
 
 ```
 pip install cookiecutter
-cookiecutter gh:joamatab/cookiecutter-pypackage-minimal
+cookiecutter gh:joamatab/python
 ```
 
 It will ask you some questions to fill the template
@@ -15,7 +15,7 @@ It will ask you some questions to fill the template
 If you want to run a branch or a different version
 
 ```
-cookiecutter gh:joamatab/cookiecutter-pypackage-minimal --checkout branch_name
+cookiecutter gh:joamatab/python --checkout branch_name
 ```
 
 
