@@ -48,7 +48,7 @@ def print_futher_instuctions(package_name: str, github: str) -> None:
 
     1) Now you can start working on it:
 
-        $ cd {package_name} && git init
+        $ cd {package_name}
 
     2) install package in developer mode
 
@@ -56,6 +56,7 @@ def print_futher_instuctions(package_name: str, github: str) -> None:
 
     3) Upload initial code to GitHub:
 
+        $ git init
         $ git add .
         $ git commit -m ":tada: Initial commit"
         $ git branch -M main
