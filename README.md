@@ -12,6 +12,12 @@ cookiecutter gh:joamatab/cookiecutter-pypackage-minimal
 
 It will ask you some questions to fill the template
 
+If you want to run a branch or a different version
+
+```
+cookiecutter gh:joamatab/cookiecutter-pypackage-minimal --checkout branch_name
+```
+
 
 ## 🚀 Features
 
