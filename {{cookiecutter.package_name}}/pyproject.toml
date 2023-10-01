@@ -32,10 +32,8 @@ dev = [
     ]
 docs = [
     "jupytext",
-    "autodoc_pydantic",
     "matplotlib",
     "jupyter-book==0.15.1",
-    "sphinx-click",
     ]
 
 
