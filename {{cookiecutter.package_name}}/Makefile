@@ -8,21 +8,6 @@ dev:
 test:
 	pytest -s
 
-cov:
-	pytest --cov={{ cookiecutter.package_name }}
-
-mypy:
-	mypy . --ignore-missing-imports
-
-pylint:
-	pylint {{ cookiecutter.package_name }}
-
-git-rm-merged:
-	git branch -D `git branch --merged | grep -v \* | xargs`
-
-update:
-	pur
-
 update-pre:
 	pre-commit autoupdate --bleeding-edge
 
