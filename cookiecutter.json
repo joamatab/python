@@ -7,6 +7,7 @@
     "author_email": "your_email@gmail.com",
     "cicd": ["github", "gitlab"],
     "_copy_without_render": [
-        ".github/workflows"
+        ".github/workflows",
+        ".changelog.d"
     ]
 }
