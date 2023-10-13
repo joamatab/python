@@ -156,11 +156,11 @@ name = "create & check changelog"
 [tool.towncrier]
 directory = ".changelog.d"
 filename = "CHANGELOG.md"
-issue_format = "[#{issue}](https://github.com/gdsfactory/gdsfactory/issues/{issue})"
+issue_format = "[#{issue}]({{ cookiecutter.package_url }}/issues/{issue})"
 package = "gdsfactory"
 start_string = "<!-- towncrier release notes start -->\n"
 template = ".changelog.d/changelog_template.jinja"
-title_format = "## [{version}](https://github.com/gdsfactory/gdsfactory/releases/tag/v{version}) - {project_date}"
+title_format = "## [{version}]({{ cookiecutter.package_url }}/releases/tag/v{version}) - {project_date}"
 underlines = ["", "", ""]
 
 [[tool.towncrier.type]]
