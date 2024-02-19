@@ -6,5 +6,6 @@
 
 ## Installation
 
-`make install`
-
+```
+make install
+```
