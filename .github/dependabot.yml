@@ -6,6 +6,6 @@ updates:
       interval: "daily"
 
   - package-ecosystem: github-actions
-    directory: /
+    directory: "{{cookiecutter.package_name}}"
     schedule:
       interval: weekly
