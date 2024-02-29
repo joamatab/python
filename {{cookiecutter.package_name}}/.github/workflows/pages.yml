@@ -1,10 +1,15 @@
-name: Sphinx docs to gh-pages
+name: build docs
 
 on:
+  pull_request:
   push:
     branches:
       - main
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-docs:
@@ -31,6 +36,7 @@ jobs:
           path: "./docs/_build/html/"
   deploy-docs:
     needs: build-docs
+    if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       pages: write
       id-token: write
@@ -43,4 +49,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/deploy-pages@v4

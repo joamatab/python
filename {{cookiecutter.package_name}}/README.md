@@ -6,6 +6,6 @@
 
 ## Installation
 
-```
+```bash
 make install
 ```
