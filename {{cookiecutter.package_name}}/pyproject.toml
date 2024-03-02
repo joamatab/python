@@ -122,11 +122,3 @@ src = "pyproject.toml"
 [[tool.tbump.file]]
 src = "{{ cookiecutter.package_name }}/__init__.py"
 
-[[tool.tbump.before_commit]]
-cmd = "git add CHANGELOG.md"
-name = "create & check changelog"
-
-[[tool.tbump.before_commit]]
-cmd = "grep -q -F {new_version} CHANGELOG.md"
-name = "create & check changelog"
-
