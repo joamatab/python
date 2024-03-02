@@ -1,11 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "{{cookiecutter.package_name}}"
+    directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
 
   - package-ecosystem: github-actions
-    directory: "{{cookiecutter.package_name}}"
+    directory: /
     schedule:
-      interval: weekly
+      interval: monthly
