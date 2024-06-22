@@ -9,7 +9,7 @@ test:
 	pytest -s
 
 update-pre:
-	pre-commit autoupdate --bleeding-edge
+	pre-commit autoupdate 
 
 git-rm-merged:
 	git branch -D `git branch --merged | grep -v \* | xargs`
