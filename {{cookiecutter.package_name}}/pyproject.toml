@@ -34,7 +34,7 @@ dev = [
 docs = [
     "jupytext",
     "matplotlib",
-    "jupyter-book==1.0.0",
+    "jupyter-book>=0.15.1,<1.1",
     ]
 
 
@@ -73,13 +73,15 @@ convention = "google"
 [tool.ruff]
 fix = true
 select = [
-    "E",  # pycodestyle errors
-    "W",  # pycodestyle warnings
-    "F",  # pyflakes
-    "I",  # isort
-    "C",  # flake8-comprehensions
-    "B",  # flake8-bugbear
-    "UP"
+  "B",  # flake8-bugbear
+  "C",  # flake8-comprehensions
+  "D",  # pydocstyle
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # isort
+  "T10",  # flake8-debugger
+  "UP",  # pyupgrade
+  "W"  # pycodestyle warnings
 ]
 ignore = [
     "E501",  # line too long, handled by black

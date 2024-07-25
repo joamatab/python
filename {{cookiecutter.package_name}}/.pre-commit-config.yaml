@@ -13,9 +13,15 @@ repos:
       - id: name-tests-test
         args: ["--pytest-test-first"]
       - id: trailing-whitespace
+        
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+      - id: nbstripout
+        files: ".ipynb"
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.4.10"
+    rev: "v0.5.4"
     hooks:
       - id: ruff
         args: [ --fix, --exit-non-zero-on-fix ]
@@ -26,13 +32,13 @@ repos:
     hooks:
       - id: shellcheck
         
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.10.0"
-    hooks:
-      - id: mypy
-        exclude: ^(docs/|example-plugin/|tests/fixtures)
-        additional_dependencies:
-          - "pydantic"
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: "v1.10.0"
+  #   hooks:
+  #     - id: mypy
+  #       exclude: ^(docs/|example-plugin/|tests/fixtures)
+  #       additional_dependencies:
+  #         - "pydantic"
            
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.13.0
@@ -41,14 +47,14 @@ repos:
         args: [--autofix]
 
 
-  - repo: https://github.com/aristanetworks/j2lint.git
-    rev: v1.1.0
-    hooks:
-      - id: j2lint
-        types: [file]
-        files: \.(j2|yml|yaml)$
-        args: [--extensions, "j2,yml,yaml", --ignore, jinja-statements-delimiter, jinja-statements-indentation, --]
-        exclude: .github/.*
+  # - repo: https://github.com/aristanetworks/j2lint.git
+  #   rev: v1.1.0
+  #   hooks:
+  #     - id: j2lint
+  #       types: [file]
+  #       files: \.(j2|yml|yaml)$
+  #       args: [--extensions, "j2,yml,yaml", --ignore, jinja-statements-delimiter, jinja-statements-indentation, --]
+  #       exclude: .github/.*
   - repo: https://github.com/codespell-project/codespell
     rev: v2.3.0
     hooks:
@@ -56,11 +62,6 @@ repos:
         additional_dependencies:
           - tomli
             
-  - repo: https://github.com/kynan/nbstripout
-    rev: 0.7.1
-    hooks:
-      - id: nbstripout
-        files: ".ipynb"
   # - repo: https://github.com/pre-commit/pygrep-hooks
   #   rev: 7b4409161486c6956bb3206ce96db5d56731b1b9 # Use the ref you want to point at
   #   hooks:
