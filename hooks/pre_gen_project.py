@@ -1,4 +1,4 @@
-"""This module is called before project is created."""
+"""This module is called before the project is created."""
 
 import re
 import sys
@@ -7,7 +7,8 @@ PROJECT_NAME = "{{ cookiecutter.package_name }}"
 PROJECT_VERSION = "{{ cookiecutter.package_version }}"
 
 
-MODULE_REGEX = re.compile(r"^[a-z][a-z0-9\-\_]+[a-z0-9]$")
+# Updated regex to allow uppercase letters as well
+MODULE_REGEX = re.compile(r"^[a-zA-Z][a-zA-Z0-9\-\_]+[a-zA-Z0-9]$")
 SEMVER_REGEX = re.compile(
     r"""
         ^
@@ -33,8 +34,8 @@ SEMVER_REGEX = re.compile(
 def validate_package_name(package_name: str) -> None:
     """Ensure that `package_name` parameter is valid.
 
-    Valid inputs starts with the lowercase letter.
-    Followed by any lowercase letters, numbers or underscores.
+    Valid inputs start with a letter (either uppercase or lowercase).
+    Followed by any letters, numbers, hyphens, or underscores.
 
     Args:
         package_name: current project name
@@ -65,7 +66,7 @@ def validate_line_length(line_length: int) -> None:
     """Validate line_length parameter. Length should be between 50 and 300.
 
     Args:
-        line_length: integer paramenter for isort and black formatters
+        line_length: integer parameter for isort and black formatters
 
     Raises:
         ValueError: If line_length isn't between 50 and 300
@@ -86,3 +87,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
